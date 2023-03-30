@@ -1,11 +1,11 @@
-package pilha.implementacao;
+package desafioPilha;
 
-public class Pilha {
-	private Integer[] elementos = new Integer[10];
+public class questao4 {
+	private String[] elementos = new String[10];
 	
 	private Integer topo = null;
 	
-	public void empilhar(Integer elemento) {
+	public void empilhar(String elemento) {
 		if(estaCheia()) return;
 		
 		if(topo == null) {
@@ -17,10 +17,10 @@ public class Pilha {
 		elementos[topo] = elemento;
 	}
 	
-	public Integer desempilhar() {
+	public String desempilhar() {
 		if(estaVazia()) return null;
 		
-		Integer desempilhado = elementos[topo];
+		String desempilhado = elementos[topo];
 		elementos[topo] = null;
 		
 		if(topo>0) {
@@ -56,14 +56,15 @@ public class Pilha {
 		System.out.println(elementos);
 	}
 	
-	public void imprimirInverso() {
-		String valores = "";
-		for(int i = this.elementos.length-1; i >=0; i--) {
-			if(this.elementos[i] != null) {
-				valores += "[ "+elementos[i]+" ]";
+	public Integer desempilharAte(String livro) {
+		int count = 0;
+		for(int i=0; i<elementos.length; i++) {
+			if(desempilhar() != livro){
+				count++;
+			}else {
+				break;
 			}
 		}
-		
-		System.out.println(valores);
+		return count;
 	}
 }
