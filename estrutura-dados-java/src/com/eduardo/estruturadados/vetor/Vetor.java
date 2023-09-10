@@ -18,12 +18,14 @@ public class Vetor {
         }
     } */
 
-    public void adiciona(String elemento) throws Exception{
+    public boolean adiciona(String elemento){
         if(tamanho < elementos.length){
             this.elementos[tamanho] = elemento;
             this.tamanho++;
-        } else {
-            throw new Exception("Tamanho do vetor insuficiente para novas adições");
+
+            return true;
         }
+
+        return false;
     }
 }
