@@ -2,7 +2,7 @@ package com.eduardo.estruturadados.vetor.teste;
 
 import com.eduardo.estruturadados.vetor.Vetor;
 
-public class Aula04 {
+public class Aula05 {
     public static void main(String[] args){
         Vetor vetor = new Vetor(10);
 
@@ -10,10 +10,6 @@ public class Aula04 {
         vetor.adiciona("elemento 2");
         vetor.adiciona("elemento 3");
 
-        System.out.println(vetor.getTamanho());
-
-        System.out.println(vetor);
-
-        System.out.println(vetor.busca(0));
+        System.out.println(vetor.busca(1));
     }
 }
