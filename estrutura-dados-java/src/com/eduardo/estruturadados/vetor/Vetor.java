@@ -28,4 +28,8 @@ public class Vetor {
 
         return false;
     }
+
+    public int getTamanho(){
+        return this.tamanho;
+    }
 }
