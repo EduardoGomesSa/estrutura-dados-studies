@@ -17,5 +17,15 @@ public class Aula09 {
         vetor.remove(0);
 
         System.out.println(vetor);
+
+        System.out.println("Remover o elemento E");
+
+        int pos = vetor.busca("E");
+
+        if(pos > -1){
+            vetor.remove(pos);
+        }
+
+        System.out.println(vetor);
     }
 }
