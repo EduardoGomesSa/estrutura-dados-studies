@@ -1,5 +1,7 @@
 package com.eduardo.estruturadados.vetor;
 
+import java.util.Arrays;
+
 public class Vetor {
     private String[] elementos;
     private int tamanho;
@@ -31,5 +33,23 @@ public class Vetor {
 
     public int getTamanho(){
         return this.tamanho;
+    }
+
+    @Override
+    public String toString() {
+        StringBuilder stringDoVetor = new StringBuilder();
+        stringDoVetor.append("[");
+
+        for (int i = 0; i < this.tamanho - 1; i++){
+            stringDoVetor.append(this.elementos[i]);
+            stringDoVetor.append(", ");
+        }
+
+        if(this.tamanho > 0){
+            stringDoVetor.append(this.elementos[this.tamanho-1]);
+        }
+
+        stringDoVetor.append("]");
+        return stringDoVetor.toString();
     }
 }

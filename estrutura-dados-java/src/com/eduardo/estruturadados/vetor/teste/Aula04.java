@@ -11,5 +11,7 @@ public class Aula04 {
         vetor.adiciona("elemento 3");
 
         System.out.println(vetor.getTamanho());
+
+        System.out.println(vetor);
     }
 }
