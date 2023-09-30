@@ -1,7 +1,6 @@
 package com.eduardo.estruturadados.vetor.teste;
 
 import com.eduardo.estruturadados.vetor.Lista;
-import com.eduardo.estruturadados.vetor.VetorObjetos;
 
 public class Aula11 {
     public static void main(String[] args){

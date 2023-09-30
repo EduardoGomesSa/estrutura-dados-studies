@@ -3,7 +3,6 @@ package com.eduardo.estruturadados.vetor.labs;
 import com.eduardo.estruturadados.vetor.Lista;
 import com.eduardo.estruturadados.vetor.teste.Contato;
 
-import java.util.List;
 import java.util.Scanner;
 
 public class Exe06 {
