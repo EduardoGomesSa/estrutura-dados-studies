@@ -48,10 +48,10 @@ public class Exe06 {
                     imprimeTamanhoVetor(lista);
                     break;
                 case 10:
-
+                    limparVetor(lista);
                     break;
                 case 11:
-
+                    imprimirVetor(lista);
                     break;
             }
         }
@@ -60,7 +60,13 @@ public class Exe06 {
     }
 
     private static void limparVetor(Lista<Contato> lista){
-        System.out.println("Tamanho do vetor é de "+lista.getTamanho());
+        lista.limpar();
+
+        System.out.println("Todos os contatos do vetor foram excluídos");
+    }
+
+    private static void imprimirVetor(Lista<Contato> lista){
+        System.out.println(lista);
     }
 
     private static void imprimeTamanhoVetor(Lista<Contato> lista){
