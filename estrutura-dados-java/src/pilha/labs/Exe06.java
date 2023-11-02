@@ -2,43 +2,48 @@ package pilha.labs;
 
 import pilha.Pilha;
 
+import java.awt.desktop.FilesEvent;
+import java.util.Stack;
+
 public class Exe06 {
     public static void main(String[] args) {
-        String palavra = "ada";
-        imprimeResultado(palavra);
-
-        palavra = "adam";
-        imprimeResultado(palavra);
-
-        palavra = "socorram me subi no onibus em marrocos";
-        imprimeResultado(palavra);
-
-        palavra = "aaa";
-        imprimeResultado(palavra);
-
+        imprimeResultado("a+b");
+        imprimeResultado("a+b+(c+d)");
+        imprimeResultado("a+b)");
     }
 
-    public static void imprimeResultado(String palavra){
-        System.out.println(palavra + " é um palindromo? "+testaPalindromo(palavra));
+    public static void imprimeResultado(String expressao){
+        System.out.println(expressao +" está balanceada? "+ verificaSimbolosBalanceados(expressao));
     }
 
-    public static boolean testaPalindromo(String palavra){
+    final static String ABRE = "([{";
+    final static String FECHA = ")]}";
+
+    public static boolean verificaSimbolosBalanceados(String expressao){
         Pilha<Character> pilha = new Pilha<>();
+        int index = 0;
+        char simbolo, topo;
 
-        for (int i=0; i<palavra.length(); i++){
-            pilha.empilha(palavra.charAt(i));
+        while (index < expressao.length()){
+            simbolo = expressao.charAt(index);
+
+            if(ABRE.indexOf(simbolo) > -1){
+                pilha.empilha(simbolo);
+            }else if(FECHA.indexOf(simbolo) > -1){
+                if(pilha.estaVazia()){
+                    return false;
+                }else{
+                    topo = pilha.desempilha();
+
+                    if(ABRE.indexOf(topo) != FECHA.indexOf(simbolo)){
+                        return false;
+                    }
+                }
+            }
+
+            index++;
         }
 
-        String palavraInversa = "";
-
-        while (!pilha.estaVazia()){
-            palavraInversa += pilha.desempilha();
-        }
-
-        if(palavraInversa.equalsIgnoreCase(palavra)){
-            return true;
-        }
-
-        return false;
+        return true;
     }
 }
