@@ -3,7 +3,7 @@
 namespace phpCodes\recursion;
 
 function getByKey($principalBox) {
-    $pilha = [$principalBox]; // Pilha inicia com a caixa principal
+    $pilha = [$principalBox];
 
     while (!empty($pilha)) {
         $caixa = array_pop($pilha); // Remove e retorna a última caixa da pilha
